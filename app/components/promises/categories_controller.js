@@ -11,5 +11,4 @@ ddahAPP.controller('DDAHCategoriesController', ['$scope', function($scope) {
   else {
   	$scope.categories = ddahTransformer($scope.data)
   }
-
 }]);
