@@ -1,4 +1,4 @@
-/*! angular-promises`- v0.0.0 - 2015-11-12
+/*! angular-promises`- v0.0.0 - 2015-11-13
 * Copyright (c) 2015 Ciudadano Inteligente; Licensed  */
 'use strict';
 
@@ -23,10 +23,14 @@ Category.prototype.add_promise = function(promise){
 	promise.category = this;
 	this.promises.push(promise);
 }
+Category.prototype.summary = function(){
+    return new Summary(this.promises)
+}
 
 angular.module('ddah.promises', ['ddah.promises.Promise'])
 
 .value("Category", Category);
+
 'use strict';
 
 var Prom = function(){
@@ -48,6 +52,26 @@ angular.module('ddah.promises', [
 ])
 
 .value("Promise", Prom);
+
+var Summary = function(promises){
+    this.accomplished = 0
+    this.in_progress = 0
+    this.no_progress = 0
+    this.total_progress = 0
+    for(var i=0; i < promises.length; i++){
+        var promise = promises[i];
+        if(promise.fulfillment == 0){
+            this.no_progress++;
+        }
+        if(promise.fulfillment > 0 && promise.fulfillment < 100){
+            this.in_progress++;
+        }
+        if(promise.fulfillment == 100){
+            this.accomplished++;
+        }
+    }
+}
+
 'use strict';
 
 
