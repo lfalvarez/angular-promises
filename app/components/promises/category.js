@@ -21,6 +21,9 @@ Category.prototype.add_promise = function(promise){
 	promise.category = this;
 	this.promises.push(promise);
 }
+Category.prototype.summary = function(){
+    return new Summary(this.promises)
+}
 
 angular.module('ddah.promises', ['ddah.promises.Promise'])
 

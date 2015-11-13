@@ -27,4 +27,16 @@ describe('ddah.promises module category', function(){
         var p = category.promises[0]
         expect(p.category).toEqual(category)
     })
+    it('has a summary', function(){
+        var category = new Category('this is a promise');
+        var promise = new Prom();
+        promise.name = 'this is a promise'
+        promise.description = "this is a description"
+        promise.fulfillment = 10
+        promise.ponderator = 0.1
+        promise.quality = 70
+
+        category.add_promise(promise)
+        expect(category.summary().in_progress).toEqual(1)
+    });
 })
