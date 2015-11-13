@@ -1,8 +1,8 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
-  "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "name": "angular-promises",
+  "description": "Promises for AngularJS",
+  "version": "0.0.1",
+  "homepage": "https://github.com/lfalvarez/angular-promises",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -11,5 +11,20 @@
     "angular-loader": "~1.4.0",
     "angular-mocks": "~1.4.0",
     "html5-boilerplate": "~5.2.0"
-  }
+  },
+  "ignore": [
+        "app",
+        "node_modules",
+        "e2e-tests",
+        ".bowerrc",
+        ".gitignore",
+        ".jshintignore",
+        ".jshintrc",
+        "bower.json",
+        "Gruntfile.js",
+        "karma.conf.js",
+        "package.json",
+        "LICENSE",
+        "README.md"
+    ],
 }
